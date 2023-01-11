@@ -1,0 +1,129 @@
+#tool-bar{
+    background-color: black;
+    width: 100%;
+    height: 50px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+#home-btn, #menu{
+    background-color: black;
+    color: whitesmoke;
+    float: right;
+    height: 50px;
+    width: 80px;
+    font-size: 15px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+#home-btn:hover, #menu:hover{
+    background-color: rgb(58, 58, 58);
+}
+
+#top-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 40vh;
+    width: 100%;
+    /* background-color: rgb(193, 41, 41); */
+    color: black;
+    border: 0;
+}
+
+#main-header{
+    margin-top: 60px;
+    margin-bottom: 70px;
+    font-size: 40px;
+    color: rgb(231, 58, 58);
+    text-shadow: 0 0 40px black;
+}
+
+
+#top-inner{
+    display: flex;
+    width: 70%;
+    align-items: center;
+    justify-content: center;
+}
+body{
+    background: url('wall2.jpg');
+}
+html,body{
+    min-width: 400px;
+    padding: 0;
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    height: 100%;
+    width: 100%;
+}
+
+#form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#url-input{
+    width: 320px;
+    height: 25px;
+    border-radius: 20px;
+    border: 2px solid black;
+    background-color: rgb(33, 33, 33);
+    color: white;
+}
+
+#url-input:hover :focus :active{
+    background-color: rgb(33, 33, 33);
+    color: white;
+}
+
+#convert-btn{
+    width: 90px;
+    height: 82px;
+    border-radius:100% ;
+    position: absolute;
+    font-family: 'Orbitron', sans-serif;
+    margin-left: 280px;
+    border: 3px solid black;
+    background-color: black;
+    color: rgb(231, 58, 58);
+}
+
+#bottom-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    width: 100%;
+    flex-direction: column;
+    border-top: 0;
+    color: black;
+}
+
+#thumbnail{
+    border: 3px solid black;
+    margin-top: 10px;
+    padding: 0;
+}
+
+#download-btn{
+    height: 50px;
+    width: 200px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 30px;
+    background-color: rgb(193, 41, 41);
+    border-radius: 20px;
+}
+
+#download-btn:hover, #convert-btn:hover{
+    background-color:rgb(33, 33, 33);
+}
+
+.button-link{
+    text-decoration: none;
+    color: rgb(231, 58, 58)
+}

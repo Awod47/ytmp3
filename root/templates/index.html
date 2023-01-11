@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Home</title>
+</head>
+<body>
+    <div id="tool-bar">
+        <button id="home-btn" > <a href="{% url 'home' %}" class="button-link">Home</a></button>
+        <!-- <button id="menu">Menu</button> -->
+    </div>
+    <div id="top-container">
+        <form action="convert-video" method="POST" name="convert-form" id="form">
+            {% csrf_token %}
+            <h2 id="main-header">Youtube to mp3</h2>
+            <div id="top-inner">
+                <input type="text" name="youtube-url" id="url-input"><button id="convert-btn">Convert</button>
+            </div>
+        </form>
+    </div>
+    <div id="bottom-container">
+        {% if data %}
+            <img src= {{ img }}  alt=" " width="300" height="200" id="thumbnail">
+            <h3>{{ data }}</h3>
+            <form action="convert-video/download" method="POST">
+                {% csrf_token %}
+                <button id="download-btn">Download</button>
+            </form>
+        {% endif %}
+    </div>
+</body>
+</html>
