@@ -6,7 +6,6 @@ import re
 import shutil
 
 
-
 # Create your views here.
 def home_view(request, *args, **kwargs):
 
