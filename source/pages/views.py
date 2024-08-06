@@ -15,19 +15,21 @@ def home_view(request, *args, **kwargs):
 
     if request.POST:
         url = request.POST['video_url']
-        pattern = re.compile("^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube(?:-nocookie)?\.com|youtu.be))(\/(?:[\w\-]+\?v=|embed\/|live\/|v\/)?)([\w\-]+)(\S+)?$")
+        pattern = re.compile("^(https?\:\/\/)?((www\.)?youtube\.com|youtu\.be)\/.+$")
         res = pattern.match(url)
         if res:
             
             video = YouTube(url)
             stream = video.streams.filter(only_audio=True).first()
-            stream.download(output_path= './downloads', filename=f"{video.title}.mp3")
+            vid_title = video.title.replace('"','')
+            stream.download(output_path= 'downloads', filename=f"{vid_title}.mp3")
         
 
 
         return render(request, 'home.html', {'url':url})
         
     return render(request, 'home.html', {})
+
 
 def download_file(request):
     file_name = ""
@@ -42,6 +44,7 @@ def download_file(request):
     response['Content-Type'] = 'application/forcedownload'
     response['Content-Disposition'] = f'attachment; filename={file_name}' 
     return response
+
 
 def remove_file():
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
